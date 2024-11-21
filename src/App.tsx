@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { Toaster, toast } from 'react-hot-toast';
-import { LineChart, HelpCircle, ExternalLink } from 'lucide-react';
-import PlayerForm from './components/PlayerForm';
-import Leaderboard from './components/Leaderboard';
-import ErrorBoundary from './components/ErrorBoundary';
+import { Toaster, toast } from 'react-hot-toast'
+import { LineChart, HelpCircle, ExternalLink } from 'lucide-react'
+import ErrorBoundary from './components/ErrorBoundary'
+import PlayerForm from './components/PlayerForm'
+import Leaderboard from './components/Leaderboard'
 
 function App() {
   const handleHowToPlay = () => {
@@ -93,7 +92,7 @@ function App() {
         <Toaster position="top-right" />
       </div>
     </ErrorBoundary>
-  );
+  )
 }
 
-export default App;
+export default App

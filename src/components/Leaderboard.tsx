@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Trophy, TrendingDown, TrendingUp, Trash2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import type { Player } from '../lib/supabase';
