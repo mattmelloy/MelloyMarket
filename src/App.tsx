@@ -84,7 +84,7 @@ function App() {
           </button>
         </header>
         
-        <main className="container mx-auto px-4 py-8 flex space-x-8">
+        <main className="container mx-auto px-4 py-8 grid md:grid-cols-2 gap-8">
           <PlayerForm />
           <Leaderboard />
         </main>
