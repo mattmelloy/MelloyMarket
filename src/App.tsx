@@ -3,6 +3,7 @@ import { Toaster, toast } from 'react-hot-toast';
 import { LineChart, HelpCircle, ExternalLink } from 'lucide-react';
 import PlayerForm from './components/PlayerForm';
 import Leaderboard from './components/Leaderboard';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   const handleHowToPlay = () => {
@@ -68,28 +69,30 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <header className="bg-white shadow-md py-4 px-6 flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <LineChart className="w-6 h-6 text-emerald-600" />
-          <h1 className="text-xl font-bold text-gray-800">Melloy Market Match</h1>
-        </div>
-        <button 
-          onClick={handleHowToPlay}
-          className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 transition-colors"
-        >
-          <HelpCircle className="w-5 h-5" />
-          <span>How to Play</span>
-        </button>
-      </header>
-      
-      <main className="container mx-auto px-4 py-8 flex space-x-8">
-        <PlayerForm />
-        <Leaderboard />
-      </main>
-      
-      <Toaster position="top-right" />
-    </div>
+    <ErrorBoundary>
+      <div className="min-h-screen bg-gray-100">
+        <header className="bg-white shadow-md py-4 px-6 flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <LineChart className="w-6 h-6 text-emerald-600" />
+            <h1 className="text-xl font-bold text-gray-800">Melloy Market Match</h1>
+          </div>
+          <button 
+            onClick={handleHowToPlay}
+            className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 transition-colors"
+          >
+            <HelpCircle className="w-5 h-5" />
+            <span>How to Play</span>
+          </button>
+        </header>
+        
+        <main className="container mx-auto px-4 py-8 flex space-x-8">
+          <PlayerForm />
+          <Leaderboard />
+        </main>
+        
+        <Toaster position="top-right" />
+      </div>
+    </ErrorBoundary>
   );
 }
 
